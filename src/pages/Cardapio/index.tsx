@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import styles from './Cardapio.module.scss';
-import { ReactComponent as Logo } from 'assets/img/logo.svg';
 import Buscador from './Buscador';
 import Filtros from './Filtros';
 import Ordenador from './Ordenador';
 import Itens from './Itens';
-import Menu from 'components/Menu';
 
 const Cardapio = () => {
 
@@ -15,7 +13,6 @@ const Cardapio = () => {
   
     return (
         <main>
-            <Menu/>
             <header className={styles.header}>
                 <div className={styles.header__text}>
                   A casa do código e da massa
