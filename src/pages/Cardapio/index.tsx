@@ -12,12 +12,7 @@ const Cardapio = () => {
     const [ordenador, setOrdenador] = useState('');
   
     return (
-        <main>
-            <header className={styles.header}>
-                <div className={styles.header__text}>
-                  A casa do código e da massa
-                </div>
-            </header>
+        <>
             <section className={styles.cardapio}>
                 <h3 className={styles.cardapio__titulo}>Cardápio</h3>
                 <Buscador
@@ -34,7 +29,7 @@ const Cardapio = () => {
                     ordenador={ordenador}
                 />
             </section>
-        </main>
+        </>
     );
 };
 
