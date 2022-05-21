@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './Filtros.module.scss'
-import filtros from './filtros.json'
+import React from 'react';
+import styles from './Filtros.module.scss';
+import filtros from './filtros.json';
 import classNames from 'classnames';
 
 interface FiltrosProps {
@@ -15,7 +15,7 @@ const Filtros = ({ filtro, setFiltro }: FiltrosProps) => {
     const selecionarFiltro = (opcao: opcao) => {
         if(filtro === opcao.id) return setFiltro(null);
         return setFiltro(opcao.id);
-    }
+    };
 
     return (
         <div className={styles.filtros}>
@@ -32,7 +32,7 @@ const Filtros = ({ filtro, setFiltro }: FiltrosProps) => {
                 </button>
             ))}
         </div>
-    )
-}
+    );
+};
 
-export default Filtros
+export default Filtros;
