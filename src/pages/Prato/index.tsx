@@ -8,7 +8,7 @@ const Prato = () => {
 
     return (
         <div>
-            Prato
+            Prato {id}
         </div>
     );
 };
