@@ -1,20 +1,20 @@
 import React from 'react';
 import styles from './Item.module.scss';
-import classNames from 'classnames';
-import cardapio from 'data/cardapio.json';
+import { Prato } from 'types/Prato';
+import TagsPrato from 'components/TagsPrato';
 
-type ItemProps = typeof cardapio[0];
+const Item = (props: Prato) => {
 
-const Item = ({ 
-    title,
-    description,
-    photo,
-    size,
-    serving,
-    price,
-    id,
-    category,
-}: ItemProps) => {
+    const { 
+        title,
+        description,
+        category,
+        size,
+        serving,
+        price,
+        photo
+    } = props;
+
     return (
         <div className={styles.item}>
             <div className={styles.item__imagem}>
@@ -25,23 +25,9 @@ const Item = ({
                     <h2> {title} </h2>
                     <p> {description} </p>
                 </div>
-                <div className={styles.item__tags}>
-                    <div className={classNames({
-                        [styles.item__tipo]: true,
-                        [styles[`item__tipo__${category.label.toLowerCase()}`]]: true,
-                    })}>
-                        {category.label}
-                    </div>
-                    <div className={styles.item__porcao}>
-                        {size}
-                    </div>
-                    <div className={styles.item__qtdpessoas}>
-                        Serve {serving} pessoa{serving === 1 ? '' : 's'}
-                    </div>
-                    <div className={styles.item__valor}>
-                        R$ {price.toFixed(2)}
-                    </div>
-                </div>
+                <TagsPrato 
+                    {...props}
+                />
             </div>
         </div>
     );
