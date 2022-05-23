@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import cardapio from 'data/cardapio.json';
 import TagsPrato from 'components/TagsPrato';
+import NotFound from 'pages/NotFound';
 
 const Prato = () => {
 
@@ -11,7 +12,7 @@ const Prato = () => {
     const navigate = useNavigate();
     const prato = cardapio.find(item => item.id === Number(id));
     if(!prato){
-        return '';
+        return <NotFound/>;
     }
     return (
         <>
