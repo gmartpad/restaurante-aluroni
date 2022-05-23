@@ -12,7 +12,7 @@ const Inicio = () => {
     pratosRecomendados = pratosRecomendados.sort(() => 0.5 - Math.random()).splice(0, 3);
     const navigate = useNavigate();
 
-    const redirecionarParaDetalhes = (prato: Prato]) => {
+    const redirecionarParaDetalhes = (prato: Prato) => {
         navigate(`/prato/${prato.id}`, { state: { ...prato } });
     };
 
